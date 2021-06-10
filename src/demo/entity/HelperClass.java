@@ -11,29 +11,76 @@ public class HelperClass {
         return chuvi;
     }
 
-    public int tinhLuongThuongThang13(int luongChinhThuc, int thuong){
+    public int tinhLuongThuongThang13(int soNamKinhNghiem, double soNamCongHien){
         int luongThang13 = 0;
-        if (luongChinhThuc == 10000000){
-            if (thuong == 30){
-                luongThang13 = (int)(luongChinhThuc * 0.3);
+        int luong = 0;
+        if (soNamKinhNghiem < 2 ){
+            luong = 10000000;
+            if (soNamCongHien < 1){
+                luongThang13 = (int) (luong * 0.3);
             }
-            if (thuong == 50){
-                luongThang13 = (int)(luongChinhThuc * 0.5);
+            if (soNamCongHien >=1 && soNamCongHien <=2 ){
+                luongThang13 = (int) (luong * 0.5);
+            }
+            if (soNamCongHien >=1 && soNamCongHien <=2 ){
+                luongThang13 = luong;
+            }
+            if (soNamCongHien > 5 ){
+                luongThang13 = luong * 5;
             }
         }
-        if (luongChinhThuc == 20000000){
-
-                luongThang13 = luongChinhThuc * 1;
-
+        if (soNamKinhNghiem >= 2 && soNamKinhNghiem <= 5){
+            luong = 20000000;
+            if (soNamCongHien <1){
+                luongThang13 = (int) (luong * 0.3);
+            }
+            if (soNamCongHien >=1 && soNamCongHien <=2 ){
+                luongThang13 = (int) (luong * 0.5);
+            }
+            if (soNamCongHien >=1 && soNamCongHien <=2 ){
+                luongThang13 = luong;
+            }
+            if (soNamCongHien > 5 ){
+                luongThang13 = luong * 5;
+            }
         }
-        if (luongChinhThuc == 30000000){
-
-                luongThang13 = luongChinhThuc * 2;
-
+        if (soNamKinhNghiem > 5 ){
+            luong = 30000000;
+            if (soNamCongHien <1){
+                luongThang13 = (int) (luong * 0.3);
+            }
+            if (soNamCongHien >=1 && soNamCongHien <=2 ){
+                luongThang13 = (int) (luong * 0.5);
+            }
+            if (soNamCongHien >=1 && soNamCongHien <=2 ){
+                luongThang13 = luong;
+            }
+            if (soNamCongHien > 5 ){
+                luongThang13 = luong * 5;
+            }
         }
-
-
         return luongThang13;
+    }
+
+    public double tinhNuaChuViTamGiac(int a, int b , int c){
+        return  (double) (a+b+c)/2;
+    }
+
+    public void timMaxMin(int[] arr){
+        int max = arr[0];
+        int min = arr[0];
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i] > max){
+                max = arr[i];
+            }
+        }
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i] < min ){
+                min = arr[i];
+            }
+        }
+        System.out.println("Số lớn nhất : " + max);
+        System.out.println("Số bé nhất : " + min);
     }
 
 }

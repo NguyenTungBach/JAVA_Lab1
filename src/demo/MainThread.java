@@ -18,63 +18,46 @@ public class MainThread {
 //        double g = tinh.tinhChuViHinhTron(2);
 //        System.out.println("Chu vi là: " + g);
 
+        // Lab 1: Tính lương tháng
+
         Locale locale = new Locale("vi", "VN");
         NumberFormat format = NumberFormat.getCurrencyInstance(locale);
 
         Scanner scanner= new Scanner(System.in);
-            System.out.println("Lương thưởng tháng 13 của một nhân viên.");
-            System.out.println("==========================");
-            System.out.println("1. Cống hiến dưới 1 năm");
-            System.out.println("2. Cống hiến từ 1 năm đến 2 năm");
-            System.out.println("3. Cống hiến từ 2 năm đến 5 năm");
-            System.out.println("4. Cống hiến từ 5 năm trở lên");
-            System.out.println("0. EXIT");
-            System.out.println("==========================");
+        // Lab 1: Tính lương tháng
+        System.out.println("Bài Lab1: Lương thưởng tháng 13 của một nhân viên.");
+        System.out.println("Nhập số năm kinh nghiệm");
+        int soNamKinhNghiem = scanner.nextInt();
+        System.out.println("Nhập số năm cống hiến");
+        double soNamCongHien = scanner.nextDouble();
+        System.out.println("Lương tháng 13 là " + format.format(tinh.tinhLuongThuongThang13( soNamKinhNghiem, soNamCongHien)) + "\n");
 
-            int choice = scanner.nextInt();
-            int luongChinhThuc = 0;
-            int thuong = 0;
-            switch (choice){
-                case 0:
-                    System.out.println("Đã thoát");
-                    break;
-                case 1:
-                    System.out.println("Cống hiến dưới 1 năm");
-                    luongChinhThuc = 10000000;
-                    thuong = 30;
-                    System.out.println("Lương Chính Thức = " + luongChinhThuc + " Đồng");
-                    System.out.println("Thưởng = " + thuong + " % \n");
-                    System.out.println("Lương Tháng 13 = " + format.format(tinh.tinhLuongThuongThang13(luongChinhThuc,thuong)));
-                    break;
-                case 2:
-                    System.out.println("Cống hiến từ 1 năm đến 2 năm");
-                    luongChinhThuc = 10000000;
-                    thuong = 50;
-                    System.out.println("Lương Chính Thức = " + luongChinhThuc + " Đồng");
-                    System.out.println("Thưởng = " + thuong + " % \n");
-                    System.out.println("Lương Tháng 13 = " + tinh.tinhLuongThuongThang13(luongChinhThuc,thuong) );
-                    System.out.println("Lương Tháng 13 = " + format.format(tinh.tinhLuongThuongThang13(luongChinhThuc,thuong)));
-                    break;
-                case 3:
-                    System.out.println("Cống hiến từ 2 năm đến 5 năm");
-                    luongChinhThuc = 20000000;
-                    thuong = 100;
-                    System.out.println("Lương Chính Thức = " + luongChinhThuc + " Đồng");
-                    System.out.println("Thưởng = " + thuong + " % \n");
-                    System.out.println("Lương Tháng 13 = " + tinh.tinhLuongThuongThang13(luongChinhThuc,thuong) );
-                    System.out.println("Lương Tháng 13 = " + format.format(tinh.tinhLuongThuongThang13(luongChinhThuc,thuong)));
-                    break;
-                case 4:
-                    System.out.println("Cống hiến từ 5 năm trở lên");
-                    luongChinhThuc = 30000000;
-                    thuong = 200;
-                    System.out.println("Lương Chính Thức = " + luongChinhThuc + " Đồng");
-                    System.out.println("Thưởng = " + thuong + " % \n");
-                    System.out.println("Lương Tháng 13 = " + tinh.tinhLuongThuongThang13(luongChinhThuc,thuong) );
-                    System.out.println("Lương Tháng 13 = " + format.format(tinh.tinhLuongThuongThang13(luongChinhThuc,thuong)));
-                    break;
+        // Lab 1.2: Viết chương trình tính nửa chu vi tam giác
+        System.out.println("Lab 1.2: Tính nửa chu vi tam giác");
+        System.out.println("Nhập cạnh a: ");
+        int a = scanner.nextInt();
+        System.out.println("Nhập cạnh b: ");
+        int b = scanner.nextInt();
+        System.out.println("Nhập cạnh c: ");
+        int c = scanner.nextInt();
 
+        if (a <= 0 || b <= 0 || c <= 0){
+            System.out.println("Độ dài một cạnh tam giác không thể nhỏ hơn hoặc bằng 0");
+        }
+        else if(a+b <=c || a+c <=b || b+c <=a){
+            System.out.println("Tổng hai cạnh của một tam giác luôn phải lớn hơn cạnh còn lại (Theo bất đẳng thức tam giác)");
+        }
+        else{
+            System.out.printf("Nửa Chu vi tam giác là:  %.2f \n \n", tinh.tinhNuaChuViTamGiac(a,b,c));
         }
 
+        // Lab 1.3: Viết chương trình tìm số lớn nhất và nhỏ nhất trong một mảng các số nguyên
+        int[] arr = {0,1, 2, 5, 4, 3};
+        System.out.println("Mảng là: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.print("\n");
+        tinh.timMaxMin(arr);
     }
 }
