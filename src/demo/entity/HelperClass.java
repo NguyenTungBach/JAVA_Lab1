@@ -14,16 +14,16 @@ public class HelperClass {
     public int caseLuongThuongThang13(int luong, double soNamCongHien){
         int luongThang13 = 0;
         if (soNamCongHien < 1){
-            luongThang13 = ((int) (luong * 0.3)) + luong;
+            luongThang13 = (int) (luong * 0.3);
         }
         if (soNamCongHien >=1 && soNamCongHien <=2 ){
-            luongThang13 = ((int) (luong * 0.5)) + luong;
+            luongThang13 = (int) (luong * 0.5);
         }
         if (soNamCongHien >=2 && soNamCongHien <=5 ){
-            luongThang13 = luong + luong;
+            luongThang13 = luong;
         }
         if (soNamCongHien > 5 ){
-            luongThang13 = (luong * 2)  + luong;
+            luongThang13 = (luong * 2) ;
         }
         return luongThang13;
     }
