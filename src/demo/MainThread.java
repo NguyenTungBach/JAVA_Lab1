@@ -41,15 +41,16 @@ public class MainThread {
         System.out.println("Nhập cạnh c: ");
         int c = scanner.nextInt();
 
-        if (a <= 0 || b <= 0 || c <= 0){
-            System.out.println("Độ dài một cạnh tam giác không thể nhỏ hơn hoặc bằng 0");
-        }
-        else if(a+b <=c || a+c <=b || b+c <=a){
-            System.out.println("Tổng hai cạnh của một tam giác luôn phải lớn hơn cạnh còn lại (Theo bất đẳng thức tam giác)");
-        }
-        else{
-            System.out.printf("Nửa Chu vi tam giác là:  %.2f \n \n", tinh.tinhNuaChuViTamGiac(a,b,c));
-        }
+//        if (a <= 0 || b <= 0 || c <= 0){
+//            System.out.println("Độ dài một cạnh tam giác không thể nhỏ hơn hoặc bằng 0");
+//        }
+//        else if(a+b <=c || a+c <=b || b+c <=a){
+//            System.out.println("Tổng hai cạnh của một tam giác luôn phải lớn hơn cạnh còn lại (Theo bất đẳng thức tam giác)");
+//        }
+//        else{
+//            System.out.printf("Nửa Chu vi tam giác là:  %.2f \n \n", tinh.tinhNuaChuViTamGiac(a,b,c));
+//        }
+        System.out.printf("Nửa Chu vi tam giác là:  %.2f \n \n", tinh.tinhNuaChuViTamGiac(a,b,c));
 
         // Lab 1.3: Viết chương trình tìm số lớn nhất và nhỏ nhất trong một mảng các số nguyên
         int[] arr = {0,1, 2, 5, 4, 3};
