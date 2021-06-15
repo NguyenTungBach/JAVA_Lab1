@@ -1,4 +1,4 @@
-package demo.entity;
+package Lab1.entity;
 
 public class HelperClass {
     public double tinhTrungBinhCong(int a, int b, int c){

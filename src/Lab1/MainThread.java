@@ -1,6 +1,6 @@
-package demo;
+package Lab1;
 
-import demo.entity.HelperClass;
+import Lab1.entity.HelperClass;
 
 import java.text.NumberFormat;
 import java.util.Locale;
